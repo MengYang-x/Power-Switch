@@ -47,6 +47,17 @@
             <ModeSub name="Time_Base" value="SysTick"/>
         </Mode>
     </SYSTEM>
+    <TMR1>
+        <Mode>
+            <ModeSub name="Channel1 mode" value="Output_CH1"/>
+            <ModeSub name="Activated" value="TRUE"/>
+        </Mode>
+    </TMR1>
+    <TMR14>
+        <Mode>
+            <ModeSub name="Activated" value="TRUE"/>
+        </Mode>
+    </TMR14>
     <USART1>
         <Mode>
             <ModeSub name="Mode" value="Asynchronous"/>
@@ -62,9 +73,35 @@
         <CRM_IRQHandler>0;0;0</CRM_IRQHandler>
         <EXINT1_0_IRQHandler>0;0;0</EXINT1_0_IRQHandler>
         <ADC1_CMP_IRQHandler>0;0;0</ADC1_CMP_IRQHandler>
+        <TMR1_BRK_OVF_TRG_HALL_IRQHandler>0;0;0</TMR1_BRK_OVF_TRG_HALL_IRQHandler>
+        <TMR1_CH_IRQHandler>0;0;0</TMR1_CH_IRQHandler>
+        <TMR14_GLOBAL_IRQHandler>0;0;0</TMR14_GLOBAL_IRQHandler>
         <SPI1_IRQHandler>0;0;0</SPI1_IRQHandler>
         <USART1_IRQHandler>0;0;0</USART1_IRQHandler>
     </NVIC>
+    <GPIO>
+        <Signal SignalName="EXINT1" PinName="PA1">
+            <Parameters name="Label" value="KEY1"/>
+        </Signal>
+        <Signal SignalName="SPI1_SCK" PinName="PA5">
+            <Parameters name="Label" value="LCD_SCL"/>
+        </Signal>
+        <Signal SignalName="GPIO_Output" PinName="PA6">
+            <Parameters name="Label" value="LCD_DC"/>
+        </Signal>
+        <Signal SignalName="SPI1_MOSI" PinName="PA7">
+            <Parameters name="Label" value="LCD_SDA"/>
+        </Signal>
+        <Signal SignalName="GPIO_Output" PinName="PB0">
+            <Parameters name="Label" value="LCD_RES"/>
+        </Signal>
+        <Signal SignalName="GPIO_Output" PinName="PB1">
+            <Parameters name="Label" value="LCD_CS"/>
+        </Signal>
+        <Signal SignalName="TMR1_CH1" PinName="PA8">
+            <Parameters name="Label" value="LCD_BLK"/>
+        </Signal>
+    </GPIO>
     <ClockConfiguration>
         <lextbypass>0</lextbypass>
         <rtcsel>0</rtcsel>
@@ -93,8 +130,13 @@
         <PinSub pinname="PF1/HEXT_OUT" signalname="CRM_HEXT_OUT" signaltype="2"/>
         <PinSub pinname="PA0" signalname="ADC1_IN0" signaltype="2"/>
         <PinSub pinname="PA1" signalname="EXINT1" signaltype="3"/>
+        <PinSub pinname="PA2" signalname="GPIO_Output" signaltype="3"/>
         <PinSub pinname="PA5" signalname="SPI1_SCK" signaltype="2"/>
+        <PinSub pinname="PA6" signalname="GPIO_Output" signaltype="3"/>
         <PinSub pinname="PA7" signalname="SPI1_MOSI" signaltype="2"/>
+        <PinSub pinname="PB0" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PB1" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PA8" signalname="TMR1_CH1" signaltype="2"/>
         <PinSub pinname="PA9" signalname="USART1_TX" signaltype="2"/>
         <PinSub pinname="PA10" signalname="USART1_RX" signaltype="2"/>
         <PinSub pinname="PA13" signalname="DEBUG_SWDIO" signaltype="2"/>
@@ -102,7 +144,7 @@
     </PINInfo>
     <ProjectInfomation>
         <ProjectName>AT32F421C8T7_WorkBench</ProjectName>
-        <ProjectLocation>E:/02.github/04.Power-Switch/02.Hardware</ProjectLocation>
+        <ProjectLocation>D:/01.github/01.Power-Switch/02.Hardware</ProjectLocation>
         <ToolchainIDE>AT32_IDE</ToolchainIDE>
         <KeepUserCode>true</KeepUserCode>
         <NotUsedPinAnalog>false</NotUsedPinAnalog>
