@@ -8,6 +8,7 @@
     <ADC1>
         <Mode>
             <ModeSub name="IN0" value="TRUE"/>
+            <ModeSub name="IN3" value="TRUE"/>
         </Mode>
         <Parameters>
             <ParametersSub name="Channel_OrdinarySequence_1" value="ADC_CHANNEL_0"/>
@@ -131,6 +132,7 @@
         <PinSub pinname="PA0" signalname="ADC1_IN0" signaltype="2"/>
         <PinSub pinname="PA1" signalname="EXINT1" signaltype="3"/>
         <PinSub pinname="PA2" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PA3" signalname="ADC1_IN3" signaltype="2"/>
         <PinSub pinname="PA5" signalname="SPI1_SCK" signaltype="2"/>
         <PinSub pinname="PA6" signalname="GPIO_Output" signaltype="3"/>
         <PinSub pinname="PA7" signalname="SPI1_MOSI" signaltype="2"/>
